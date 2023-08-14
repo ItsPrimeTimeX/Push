@@ -1,0 +1,149 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+-- Defining Ui Library
+local Window = Rayfield:CreateWindow({
+    Name = "Pushing Simulator🤼 -PRIME TIME", -- Game Name
+    LoadingTitle = "PRIME TIME",
+    LoadingSubtitle = "Created By: Prime Time",
+    ConfigurationSaving = {
+       Enabled = false,
+       FolderName = nil,
+       FileName = "PrimeTime"
+    },
+    Discord = {
+       Enabled = false,
+       Invite = "noinvitelink",
+       RememberJoins = true
+    },
+    KeySystem = false,
+    KeySettings = {
+       Title = "Untitled",
+       Subtitle = "Key System",
+       Note = "No method of obtaining the key is provided",
+       FileName = "Key", 
+       SaveKey = true,
+       GrabKeyFromSite = false,
+       Key = {"Hello"} 
+    }
+ })
+--------------------------------------------------------------------
+ local MainTab = Window:CreateTab("Home🏠", nil) 
+ local MainSection = MainTab:CreateSection("Main")
+--------------------------------------------------------------------
+--Notification
+ Rayfield:Notify({
+    Title = "PRIME TIME",
+    Content = "DM me on discord (itzprimetime) if u need any other scripts made",
+    Duration = 5,
+    Image = nil,
+    Actions = { 
+       Ignore = {
+          Name = "Thanks!",
+          Callback = function()
+          print("The user tapped Okay!")
+       end
+    },
+ },
+ })
+----------------------------------------------------------------------------------------------------------------
+-- Script Start!                           -Script By PRIME TIME                                              --
+----------------------------------------------------------------------------------------------------------------
+ local isRunning = false
+ --------------------------------------------------
+ --                 Toggles                      --
+ --------------------------------------------------
+ local Toggle = MainTab:CreateToggle({
+    Name = "Auto Train",
+    CurrentValue = false,
+    Flag = "Toggle1",
+    Callback = function(Value)
+        isRunning = Value
+
+        if isRunning then
+            while isRunning do
+                game:GetService("ReplicatedStorage").Remotes.PowerGain:FireServer()
+                wait()
+            end
+        end
+    end,
+})
+
+
+ local Toggle = MainTab:CreateToggle({
+     Name = "Auto Push",
+     CurrentValue = false,
+     Flag = "Toggle2",
+     Callback = function(Value)
+         isRunning = Value 
+ 
+         if isRunning then
+             while isRunning do
+                game:GetService("ReplicatedStorage").Remotes.PushGain:FireServer()
+                 wait()
+             end
+         end
+     end,
+ })
+
+ local Toggle = MainTab:CreateToggle({
+    Name = "Auto Rebirth",
+    CurrentValue = false,
+    Flag = "Toggle3",
+    Callback = function(Value)
+        isRunning = Value 
+
+        if isRunning then
+            while isRunning do
+                game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer()
+                wait()
+            end
+        end
+    end,
+})
+
+-----------------------------------------------------------------
+--                         Buttons                             --
+-----------------------------------------------------------------
+ local TpTab = Window:CreateTab("Teleports🛬", nil)
+ local TpSection = TpTab:CreateSection("Teleports")
+
+ local Button = TpTab:CreateButton({
+    Name = "Forest",
+    Callback = function()
+        local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+        local targetCFrame = CFrame.new(-80.6999969, 9.89999962, -19.9500008, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+        character:SetPrimaryPartCFrame(targetCFrame)
+    end,
+    })
+
+    local Button = TpTab:CreateButton({
+        Name = "Beach",
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            local character = player.Character or player.CharacterAdded:Wait()
+            local targetCFrame = CFrame.new(631.853638, 809.900024, -122.222565, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+            character:SetPrimaryPartCFrame(targetCFrame)
+        end,
+    })
+
+    local Button = TpTab:CreateButton({
+        Name = "Magma",
+        Callback = function()
+            local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+        local targetCFrame = CFrame.new(1432.75366, 1609.90002, -122.422562, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+        character:SetPrimaryPartCFrame(targetCFrame)
+        end,
+    })
+
+    local Button = TpTab:CreateButton({
+        Name = "Ancient",
+        Callback = function()
+            local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+        local targetCFrame = CFrame.new(2107.03394, 2109.8999, -12.5375671, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+        character:SetPrimaryPartCFrame(targetCFrame)
+        end,
+    })
+
+
